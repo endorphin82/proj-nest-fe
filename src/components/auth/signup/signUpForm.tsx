@@ -3,6 +3,7 @@ import {Form, Input, Button, Select} from 'antd';
 import './styles.scss';
 import {Link} from 'react-router-dom';
 import Icon from '@ant-design/icons';
+import { LockOutlined, MailOutlined, UserOutlined, IdcardOutlined, ManOutlined, WomanOutlined } from '@ant-design/icons';
 
 const {Option} = Select;
 
@@ -32,7 +33,7 @@ export default function SignUpForm() {
         <Input
           type="text"
           // @ts-ignore
-          prefix={<Icon type="idcard" theme="filled" style={{color: 'rgba(0,0,0,.25)'}}/>}
+          prefix={<UserOutlined theme="filled" style={{color: 'rgba(0,0,0,.25)'}}/>}
           placeholder="First Name"
         />
       </Form.Item>
@@ -40,15 +41,16 @@ export default function SignUpForm() {
         <Input
           type="text"
           // @ts-ignore
-          prefix={<Icon type="idcard" theme="filled" style={{color: 'rgba(0,0,0,.25)'}}/>}
+          prefix={<IdcardOutlined theme="filled" style={{color: 'rgba(0,0,0,.25)'}}/>}
           placeholder="Last Name"
         />
       </Form.Item>
       <Form.Item>
 
         <Select placeholder="Select gender">
-          <Option value="male">Male</Option>
-          <Option value="female">Female</Option>
+          <Option
+            value="male"><ManOutlined style={{color: 'rgba(0,0,0,.25)'}}/> Male</Option>
+          <Option value="female"><WomanOutlined style={{color: 'rgba(0,0,0,.25)'}}/> Female</Option>
         </Select>
       </Form.Item>
       <Form.Item>
@@ -56,27 +58,27 @@ export default function SignUpForm() {
         <Input
           type="email"
           // @ts-ignore
-          prefix={<Icon type="mail" theme="filled" style={{color: 'rgba(0,0,0,.25)'}}/>}
+          prefix={<MailOutlined theme="filled" style={{color: 'rgba(0,0,0,.25)'}}/>}
           placeholder="Email"
         />
       </Form.Item>
       <Form.Item>
 
-        <Input
+        <Input.Password
           // @ts-ignore
-          prefix={<Icon type="lock" theme="filled" style={{color: 'rgba(0,0,0,.25)'}}/>}
-          type="password"
+          prefix={<LockOutlined theme="filled" style={{color: 'rgba(0,0,0,.25)'}}/>}
           placeholder="Password"
         />
       </Form.Item>
+
       <Form.Item>
-        <Input
+        <Input.Password
           // @ts-ignore
-          prefix={<Icon type="lock" theme="filled" style={{color: 'rgba(0,0,0,.25)'}}/>}
-          type="password"
+          prefix={<LockOutlined theme="filled" style={{color: 'rgba(0,0,0,.25)'}}/>}
           placeholder="Confirm Password"
         />
       </Form.Item>
+
       <Form.Item>
         <Button type="primary" htmlType="submit" className="signup-form-button">
           Sign Up

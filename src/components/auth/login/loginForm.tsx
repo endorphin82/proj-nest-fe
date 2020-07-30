@@ -1,8 +1,8 @@
 import React, {FormEvent} from 'react';
 import {Form, Input, Button, Checkbox} from 'antd';
 import {Link} from 'react-router-dom';
+import { LockOutlined, MailOutlined } from '@ant-design/icons';
 
-import Icon from '@ant-design/icons';
 import './styles.scss';
 
 // interface ILoginFormProps {
@@ -31,16 +31,15 @@ export default function LoginForm() {
       >
         <Input
           type="email"
-          prefix={<Icon type="user" style={{color: 'rgba(0,0,0,.25)'}}/>}
+          prefix={<MailOutlined className="site-form-item-icon" style={{color: 'rgba(0,0,0,.25)'}}/>}
           placeholder="Email"
         />
       </Form.Item>
 
       <Form.Item>
-        <Input
+        <Input.Password
           // @ts-ignore
-          prefix={<Icon type="lock" theme="filled" style={{color: 'rgba(0,0,0,.25)'}}/>}
-          type="password"
+          prefix={<LockOutlined theme="filled" style={{color: 'rgba(0,0,0,.25)'}}/>}
           placeholder="Password"
         />
       </Form.Item>
